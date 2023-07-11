@@ -1,0 +1,6 @@
+$(window).on('load', () => {
+    // this removes &nbsp; from every paragraph (.text p) on page load
+    $("p").html(function (i, html) {
+        return html.replace('&nbsp;', ' ');
+    });
+});

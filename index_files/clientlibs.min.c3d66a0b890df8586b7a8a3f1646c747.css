@@ -1,0 +1,42 @@
+.small-12{width:100%}
+.social-module-container{background-color:#00b0d3;height:3.5rem}
+@media only screen and (min-width:641px) and (max-width:1024px){.social-module-container{height:5.375rem}
+}
+@media only screen and (max-width:40em){.social-module-container{height:9rem}
+}
+.social-module .tweet-list{background:transparent url("clientlibs/resources/twitter-icon.png") no-repeat 15px 16px;background-size:1.6875rem;margin:0;padding:1.25rem .625rem 1.25rem 3.5625rem;font-size:.875rem;overflow:hidden}
+@media only screen and (min-width:1025px){.social-module .tweet-list{height:1.125rem}
+}
+@media only screen and (min-width:641px) and (max-width:1024px){.social-module .tweet-list{background-position:15px 26px;height:5.25rem}
+}
+@media only screen and (max-width:40em){.social-module .tweet-list{padding-bottom:0;height:100px}
+}
+.social-module .tweet-list li{transition:opacity .5s,max-height 0;opacity:0;max-height:0}
+.social-module .tweet-list li.fade-in{opacity:1;max-height:50px}
+.social-module li{width:100%;list-style:none;color:#fff;float:left;font-weight:normal;font-size:.9375rem;font-family:"Slate W02 Book",Arial,sans-serif;height:1.125rem;white-space:nowrap;margin-top:-3px}
+@media only screen and (min-width:641px) and (max-width:1024px){.social-module li{height:2.125rem;white-space:normal}
+}
+@media only screen and (max-width:40em){.social-module li{height:3.75rem;white-space:normal}
+}
+.social-module li a{color:inherit;text-decoration:none}
+.social-module .icon{background-size:1.375rem;background-color:transparent;background-repeat:no-repeat;margin:0 6px;width:27px;height:27px;position:relative}
+.social-module .icon>a{width:100%;height:100%;position:absolute}
+.social-module .social-nav{float:right;margin:.9375rem 0 0}
+@media only screen and (min-width:641px) and (max-width:1024px){.social-module .social-nav{margin-top:25px}
+}
+@media only screen and (max-width:40em){.social-module .social-nav{float:left;margin:1.5rem 0 0;padding-left:0;padding-bottom:10px}
+}
+.social-module .linkedin{background-image:url("clientlibs/css/clientlibs_css/css/common/resources/linkedin.jpg")}
+.social-module .youtube{background-image:url("clientlibs/css/clientlibs_css/css/common/resources/youtube.jpg");margin-top:-0.1875rem}
+.social-module .facebook{background-image:url("clientlibs/css/clientlibs_css/css/common/resources/facebook.jpg")}
+.row,.l-section .l-section-row{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5rem}
+.row,.l-section .l-section-row{max-width:73.125rem}
+@media only screen and (min-width:641px){.medium-4{width:33.33333%}
+.medium-8{width:66.66667%}
+}
+@media only screen and (min-width:1025px){.large-9{width:75%}
+.large-3{width:25%}
+.column,.l-section .l-section-col,.columns{position:relative;padding-left:.9375rem;padding-right:.9375rem;float:left}
+}
+@media only screen and (min-width:641px){.column,.l-section .l-section-col,.columns{position:relative;padding-left:.9375rem;padding-right:.9375rem;float:left}
+}

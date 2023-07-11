@@ -1,0 +1,192 @@
+/*******************************************************************************
+ * Copyright 2019 Adobe
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ ******************************************************************************/
+setTimeout(function() {
+  var phnN = document.querySelectorAll(".phnNumb");
+
+  for (var _i = 0; _i < phnN.length; _i++) {
+    e.innerText = formatPhoneNumbers(e.innerText);
+  }
+}, 1);
+
+function formatPhoneNumbers(phoneNumberString) {
+  var cleaned = phoneNumberString;
+  var digit = cleaned.split("");
+  var numlength = 0;
+  var number = [];
+  var numCounter = 0;
+  // number length counter
+  digit.forEach(function(e) {
+    if (e >= 0) numlength++;
+  });
+  //formating
+  digit.forEach(function(e) {
+    if (e >= 0) numCounter++;
+    if (
+      numlength == 12 &&
+      (numCounter == 3 || numCounter == 5 || numCounter == 9)
+    )
+      number.push(" ");
+    if (numlength == 10 && (numCounter == 4 || numCounter == 7))
+      number.push(" ");
+    number.push(e);
+  });
+
+  //
+  return number.join("");
+}
+
+/**
+ * How to use:
+ *
+ * 1. Add class to checkbox
+ *
+ *		Example: granite:class="cq-dialog-checkbox-showhide"
+ *
+ * 2. Add cq-dialog-checkbox-showhide-target data-attribute to checkbox with the value being the selector to target for toggleing
+ *
+ *		Example: cq-dialog-checkbox-showhide-target=".togglefield"
+ *
+ * 3. Add target class to toggleable fields or components
+ *
+ *	    Example: granite:class="togglefield"
+ */
+(function (document, $) {
+  "use strict";
+
+  // when dialog gets injected
+  $(document).on("foundation-contentloaded", function (e) {
+    // if there is already an inital value make sure the according target element becomes visible
+    checkboxEnableDisableHandler(
+      $(".cq-dialog-checkbox-enabledisable", e.target)
+    );
+  });
+
+  $(document).on("change", ".cq-dialog-checkbox-enabledisable", function (e) {
+    checkboxEnableDisableHandler($(this));
+  });
+
+  function checkboxEnableDisableHandler(el) {
+    el.each(function (i, element) {
+      if ($(element).is("coral-checkbox")) {
+        // handle Coral3 base drop-down
+        Coral.commons.ready(element, function (component) {
+          enableDisable(component, element);
+          component.on("change", function () {
+            enableDisable(component, element);
+          });
+        });
+      } else {
+        // handle Coral2 based drop-down
+        var component = $(element).data("checkbox");
+        if (component) {
+          enableDisable(component, element);
+        }
+      }
+    });
+  }
+
+  function enableDisable(component, element) {
+    // get the selector to find the target elements. its stored as data-.. attribute
+    var target = $(element).data("cqDialogCheckboxEnabledisableTarget");
+    var $target = $(target);
+    var abc = $(".cardButtonText");
+    $target.removeClass("hide");
+
+    if (target) {
+      // $target.addClass("hide");
+      $target.css({
+        opacity: "1",
+        cursor: "auto",
+        "pointer-events": "auto",
+        "z-index": "9",
+      });
+      var at = $("#authoringType");
+      var dct = $("#cardType");
+      $(document).click(function()  {
+        var atv = at.val();
+        var dctv = dct.val();
+        if (atv == "dynamic" && dctv == "contentCard" && !component.checked) {
+          abc.attr("required", true);
+        } else {
+          abc.attr("required", false);
+        }
+      });
+
+      if (component.checked) {
+        // $target.removeClass("hide");
+        abc.val("");
+        $target.css({
+          opacity: "0.5",
+          cursor: "not-allowed",
+          "pointer-events": "none",
+          "z-index": "9",
+        });
+        abc.attr("required", false);
+      }
+    }
+  }
+})(document, jQuery);
+
+(function ($) {
+  "use strict";
+  $(document).ready(function() {
+    var component = "carddeck"; //component name
+    var mainClass = document.querySelectorAll("." + component);
+	localStorage.clear();
+
+    mainClass.forEach(function(el) {
+      var randClass = component + Math.floor(Math.random() * 100); //generate random class
+      var newClass = `.${randClass} `;
+      var mainBtn = newClass + ".c-card-deck__btn"; //add random class to button, change button class
+
+      $(el).addClass(randClass); //add random class to element
+
+      $(mainBtn).click(function(e)  {
+        // e.preventDefault();
+
+
+        var list = $(newClass + "#listFrom");
+        var parent = $(newClass + "#parentPage");
+        var tagSearch = $(newClass + "#tagsSearchRoot");
+        var tags = $(newClass + "#tags");
+        var tagsMatch = $(newClass + "#tagsMatch");
+        var depth = $(newClass + "#childDepth");
+
+        var obj = {
+          options: list ? list.text() : null,
+          parentLink: parent ? parent.text() : null,
+          tagSearch: tagSearch ? tagSearch.text() : null,
+          tags: tags ? tags.text() : null,
+          tagsMatch: tagsMatch ? tagsMatch.text() : null,
+          depth: depth ? depth.text() : null,
+        };
+        var attr = "href";
+     	var d = new Date();
+        var link = $(mainBtn).attr(attr);
+        var modLink = "";
+        modLink = link + "?redirect=true&key=" + d.getTime();
+        $(mainBtn).attr(attr, modLink);
+
+        localStorage.setItem(d.getTime(), JSON.stringify(obj));
+        obj = {};
+        setTimeout(function() {
+          $(mainBtn).attr(attr, link);
+        }, 1000);
+      }); //click end
+    });
+  });
+})(jQuery);
+

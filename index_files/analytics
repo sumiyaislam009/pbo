@@ -1,0 +1,30 @@
+
+function piResponse() {
+		piSetCookie('visitor_id395202', '1213241019', 180);
+			piSetCookie('visitor_id395202-hash', '680ce6e6cf5cbe83a1d6fa2d86c93931297f9a3a57249d27e616af37b4b3d7b961326ac03f6712732e88fbb04456577ac6882500', 180);
+		
+		if (document.location.protocol != "https:" || (document.location.protocol == "https:" && true)) {
+		var analytics_link = document.location.protocol + "//" + "info.marsh.com/analytics?";
+		pi.tracker.visitor_id='1213241019';
+
+				pi.tracker.visitor_id_sign='680ce6e6cf5cbe83a1d6fa2d86c93931297f9a3a57249d27e616af37b4b3d7b961326ac03f6712732e88fbb04456577ac6882500';
+		
+				pi.tracker.campaign_id='48127';
+		
+		var variables = 'conly=true';
+		for (property in pi.tracker) {
+					variables += "&" + property + "=" + encodeURIComponent(pi.tracker[property]);
+				}
+		var headID = document.getElementsByTagName("head")[0];
+		piScriptObj[piScriptNum] = document.createElement('script');
+		piScriptObj[piScriptNum].type = 'text/javascript';
+		piScriptObj[piScriptNum].src = analytics_link + variables;
+		headID.appendChild(piScriptObj[piScriptNum]);
+		piScriptObj[piScriptNum].onload = function() { return; }
+	}
+	}
+piResponse();
+
+
+
+

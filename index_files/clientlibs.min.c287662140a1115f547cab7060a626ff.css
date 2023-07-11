@@ -1,0 +1,88 @@
+.c-modal-message-js{display:none;margin:0rem auto;width:100%;height:100%;position:fixed;left:0;top:0;z-index:9999;padding-top:100px;background-color:black;background-color:rgba(0,0,0,0.4);-webkit-transition:.2s;overflow:auto;transition:all .2s linear}
+.c-modal-message-js .c-modal-message__inner{border-radius:2px;background-color:#49545b;margin:0 auto;display:flex;box-shadow:0 0 10px 1px rgba(0,0,0,0.25);width:70%}
+.c-modal-message-js .c-modal-message__icon{text-align:center;font-size:2.5rem;padding:1.25rem;flex:0 1 auto}
+.c-modal-message-js .c-modal-message__body{flex:0 1 auto;background-color:#37434a;overflow:hidden;width:100%}
+.c-modal-message-js .c-modal-message__body-content{padding:1.25rem;padding-bottom:0;max-height:400px;width:103%;padding-right:6%;overflow-y:scroll;background-color:#37434a}
+.c-modal-message-js .c-modal-message__body-title{white-space:normal;font-weight:normal;font-size:1.75rem;font-family:"Slate W02 Bold",Arial,sans-serif;color:white;padding:0;margin:0 0 1rem 0}
+.c-modal-message-js .c-modal-message__body-message{color:white;padding-bottom:1rem}
+.c-modal-message-js .c-modal-message__body-ui{padding:1.5rem .75rem .75rem 1.5rem;float:right;clear:both}
+.c-modal-message-js .c-modal-message__body-ui-confirm{display:inline-block;vertical-align:top;margin:0 .75rem .75rem 0;font-family:inherit;font-size:1rem;padding:1em 1em .75em 1em;-webkit-appearance:none;border:1px solid white;border-radius:2px;-webkit-transition:background-color .15s ease-out,color .15s ease-out;transition:background-color .15s ease-out,color .15s ease-out;font-weight:normal;font-size:1rem;font-family:"Slate W02 Medium",Arial,sans-serif;line-height:1;text-align:center;cursor:pointer;background-color:#37434a;color:#fff;box-shadow:0 2px 10px -4px transparent}
+.c-modal-message-js .c-modal-message__body-ui-confirm:hover{background-color:#fff;color:#37434a;box-shadow:0 2px 10px -4px #000;text-shadow:0 1px 2px rgba(0,0,0,0.15)}
+.c-modal-message-js .c-modal-message__body-ui-cancel{display:inline-block;vertical-align:top;margin:0 .75rem .75rem 0;font-family:inherit;font-size:1rem;padding:1em 1em .75em 1em;-webkit-appearance:none;border:1px solid white;border-radius:2px;-webkit-transition:background-color .15s ease-out,color .15s ease-out;transition:background-color .15s ease-out,color .15s ease-out;font-weight:normal;font-size:1rem;font-family:"Slate W02 Medium",Arial,sans-serif;line-height:1;text-align:center;cursor:pointer;background-color:#37434a;color:#fff;box-shadow:0 2px 10px -4px transparent}
+.c-modal-message-js .c-modal-message__body-ui-cancel:hover{background-color:#fff;color:#37434a;box-shadow:0 2px 10px -4px #000;text-shadow:0 1px 2px rgba(0,0,0,0.15)}
+.c-modal-message-js.c-modal-message--error .c-modal-message__icon{color:#ef4e45}
+.c-modal-message-js.c-modal-message--success .c-modal-message__icon{color:#72be44}
+.c-modal-message-js.c-modal-message--warning .c-modal-message__icon{color:#f08a24}
+.c-modal-message-js.c-modal-message--information .c-modal-message__icon{color:#00a8c8}
+.c-modal-message-js.c-modal-message--secondary .c-modal-message__icon{color:#bfbfbf}
+.c-modal-message-js.open{display:block}
+.alt-modal-secure{top:2px !important}
+#modalWindow.alt-modal-secure{height:98%}
+@media only screen and (min-width:641px) and (max-width:1024px){.c-modal-message-js .c-modal-message__body-content{max-height:600px}
+}
+@media only screen and (max-width:40em){.c-modal-message-js .c-modal-message__icon{font-size:1.75rem;padding:1.25rem .5rem}
+.c-modal-message-js .c-modal-message__body-content{max-height:200px;padding:.5rem;padding-right:5%;width:105%}
+.c-modal-message-js .c-modal-message__body-title{font-size:1.5rem}
+.c-modal-message-js .c-modal-message__body-ui{padding:1.5rem;float:none;width:100%;clear:both}
+.c-modal-message-js .c-modal-message__body-ui-confirm{width:100%;margin-bottom:1rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.c-modal-message-js .c-modal-message__body-ui-cancel{width:100%;margin-bottom:1rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#modalWindow.alt-modal-secure{height:100%;padding-bottom:10%}
+}
+@media only screen and (min-device-width:320px) and (max-device-width:568px) and (-webkit-min-device-pixel-ratio:2) and (orientation:portrait){.c-modal-message-js .c-modal-message__body-content{max-height:350px;padding:.5rem;padding-right:8%;width:105%}
+.c-modal-message-js .c-modal-message__body-ui{padding:.75rem}
+.c-modal-message-js .c-modal-message__body-ui-confirm:last-of-type{margin-bottom:0}
+}
+@media only screen and (min-device-width:320px) and (max-device-width:568px) and (-webkit-min-device-pixel-ratio:2) and (orientation:landscape){.c-modal-message-js .c-modal-message__body-content{max-height:200px}
+.c-modal-message-js .c-modal-message__body-ui-confirm{float:left;width:48%}
+.c-modal-message-js .c-modal-message__body-ui-cancel{float:left;width:48%}
+#modalWindow.alt-modal-secure{padding-bottom:5%}
+}
+@media only screen and (min-device-width:375px) and (max-device-width:667px) and (-webkit-min-device-pixel-ratio:2) and (orientation:portrait){.c-modal-message-js .c-modal-message__body-content{max-height:440px;padding:.5rem;padding-right:7%;width:105%}
+}
+@media only screen and (min-device-width:375px) and (max-device-width:667px) and (-webkit-min-device-pixel-ratio:2) and (orientation:landscape){.c-modal-message-js .c-modal-message__body-content{max-height:220px}
+.c-modal-message-js .c-modal-message__body-ui{width:100%}
+.c-modal-message-js .c-modal-message__body-ui-confirm{float:left;width:48%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.c-modal-message-js .c-modal-message__body-ui-cancel{float:left;width:48%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
+@media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation:landscape) and (-webkit-min-device-pixel-ratio:1){.c-modal-message-js .c-modal-message__body-content{max-height:400px}
+}
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){.icon-warning-ico,.c-modal-message-js.c-modal-message--error .c-modal-message__icon,.c-modal-message-js.c-modal-message--warning .c-modal-message__icon,.icon-info-ico,.c-modal-message-js.c-modal-message--information .c-modal-message__icon,.c-modal-message-js.c-modal-message--secondary .c-modal-message__icon,.icon-success-ico,.c-modal-message-js.c-modal-message--success .c-modal-message__icon{font-family:"icomoon" !important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.c-modal-message-js{display:none;margin:0rem auto;width:75%}
+.c-modal-message-js .c-modal-message__inner{background-color:#49545b;margin:0 auto;border-radius:2px;overflow:hidden}
+.c-modal-message-js .c-modal-message__icon{float:left;width:8%;text-align:center;font-size:1.65rem;padding-top:1.25rem}
+.c-modal-message-js .c-modal-message__body{float:right;width:92%;background-color:#37434a}
+.c-modal-message-js .c-modal-message__body-content{padding:1.25rem}
+.c-modal-message-js .c-modal-message__body-message{color:#000}
+.c-modal-message-js .c-modal-message__body-message>:first-child{margin-top:0}
+.c-modal-message-js .c-modal-message__body-ui{padding:1.25rem;float:right;clear:both}
+.c-modal-message-js.open{display:block}
+.c-modal-message__body-ui-confirm{display:inline-block;vertical-align:top;margin:0 1rem 0 0;font-family:inherit;font-size:1rem;padding:1em 1em .75em 1em;-webkit-appearance:none;border:1px solid #fff;border-radius:0;-webkit-transition:background-color .15s ease-out,color .15s ease-out;transition:background-color .15s ease-out,color .15s ease-out;font-weight:normal;font-size:1rem;font-family:"Slate W02 Medium",Arial,sans-serif;line-height:1;text-align:center;cursor:pointer;background-color:#37434a;color:#fff}
+.c-modal-message__body-ui-confirm:hover{background-color:#fff;color:#37434a}
+.c-modal-message__body-ui-cancel{display:inline-block;vertical-align:top;margin:0 1rem 0 0;font-family:inherit;font-size:1rem;padding:1em 1em .75em 1em;-webkit-appearance:none;border:1px solid #fff;border-radius:0;-webkit-transition:background-color .15s ease-out,color .15s ease-out;transition:background-color .15s ease-out,color .15s ease-out;font-weight:normal;font-size:1rem;font-family:"Slate W02 Medium",Arial,sans-serif;line-height:1;text-align:center;cursor:pointer;background-color:#37434a;color:#fff}
+.c-modal-message__body-ui-cancel:hover{background-color:#fff;color:#37434a}
+.c-modal-message-js.c-modal-message--error .c-modal-message__icon{color:#ef4e45}
+.c-modal-message-js.c-modal-message--error .c-modal-message__icon:before{content:"\e900"}
+.c-modal-message-js.c-modal-message--success .c-modal-message__icon{color:#72be44}
+.c-modal-message-js.c-modal-message--success .c-modal-message__icon:before{content:"\e902"}
+.c-modal-message-js.c-modal-message--warning .c-modal-message__icon{color:#f08a24}
+.c-modal-message-js.c-modal-message--warning .c-modal-message__icon:before{content:"\e900"}
+.c-modal-message-js.c-modal-message--information .c-modal-message__icon{color:#00a8c8}
+.c-modal-message-js.c-modal-message--information .c-modal-message__icon:before{content:"\e901"}
+.c-modal-message-js.c-modal-message--secondary .c-modal-message__icon{color:#bfbfbf}
+.c-modal-message-js.c-modal-message--secondary .c-modal-message__icon:before{content:"\e901"}
+}
+@media only screen and (-ms-high-contrast:active) and (max-width:1024px) and (min-width:641px),only screen and (-ms-high-contrast:none) and (max-width:1024px) and (min-width:641px){.c-modal-message-js{width:70%}
+.c-modal-message-js .c-modal-message__inner{display:block}
+.c-modal-message-js .c-modal-message__body-ui{width:50%;float:right;padding-top:1.25rem}
+.c-modal-message-js .c-modal-message__icon{font-size:1.5rem;padding:.625rem;padding-top:1.25rem}
+.c-modal-message-js .c-modal-message__body-content{padding-bottom:0}
+.c-modal-message-js .c-modal-message__body-ui{float:right;padding-top:0}
+.c-modal-message-js .c-modal-message__body-ui-confirm{clear:both;margin-top:1rem;margin-right:0;width:100%}
+}
+@media only screen and (-ms-high-contrast:active) and (max-width:640px),only screen and (-ms-high-contrast:none) and (max-width:640px){.c-modal-message-js{width:85%}
+.c-modal-message-js .c-modal-message__inner{display:block}
+.c-modal-message-js .c-modal-message__icon{font-size:1rem;padding:.625rem;padding-top:1.25rem}
+.c-modal-message-js .c-modal-message__body-content{padding-bottom:0}
+.c-modal-message-js .c-modal-message__body-ui{float:none;padding-top:0}
+.c-modal-message-js .c-modal-message__body-ui-confirm{clear:both;margin-top:1rem;margin-right:0;width:100%}
+}
